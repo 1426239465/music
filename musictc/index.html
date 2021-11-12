@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1" />
+     <!-- 调用js -->
+   <!-- <script src="jquery-1.11.0.min.js"></script> -->
+    <script src="Music.min.js"> </script>
+	<script src="https://cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+	<!-- 音乐路径 -->
+  <audio src="音乐路径" id="audio"></audio>
+ </head> 
+ <body>
+   <div class="wiiuii_mes wiiuii_me wiiuii_bok" style="font-weight: 700;margin-top: -21px;">
+    <h4 style="font-weight: 700;">Hello</h4>
+    <span>星语</span> 
+    <br />
+    <h4 style="font-weight: 700;">XINGYU</h4>
+    <br />
+    <br />
+    <br /> 
+    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1431258805" target="_blank"><button>联系方式</button></a> 
+    <a href="/" target="_blank"><button>网站首页</button></a> 
+    <button id="music">音乐开关</button>
+   </div>
+   <script type="text/javascript">
+    function playMusic() {
+        var audioEle = document.getElementById("audio");
+      if (audioEle.paused){
+        audioEle.play();
+      }else {
+        audioEle.pause();
+      }
+    }
+    
+    $("#music").click(function(){
+      play();
+    });
+
+    var player = document.getElementById("audio");
+    play();
+    function play(){
+    swal("请问是否开启音乐🎶一边阅读一边听歌呢❓\n" ,{
+            buttons: {
+              allowcancel: "开启音乐",
+                allow: "关闭音乐"
+            }
+        }).then(function(value) {
+            if (value == "allow") {
+                player.pause()
+            } else {
+                player.play();
+            }
+        });
+    }
+    </script> 
+	<!-- css样式 -->
+   <style type="text/css">
+    .wiiuii_bok{width: 100%; height: 100%; background-image: linear-gradient(#fdcbf1,#e6dee9,#a1c4fd,#a8edea,#d299c2);}
+    .wiiuii_me{width: auto;height: auto;margin: 0 auto;padding: 32vh 0;text-align: center;}.wiiuii_mes{text-align: center;}.wiiuii_me span{font-size: 56px;}button,input{padding: 0.625rem;border-radius: 8px;border: 0;cursor: pointer;background-color: black;color: white;font-weight: 700;margin: 0.625rem;}
+  	</style>
+</body>
+</html	
